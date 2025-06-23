@@ -5,9 +5,10 @@ def count_characters(book_text):
     characters_dict = {}
     for words in book_text:
         for character in words:
-            character = character.lower()
-            if character in characters_dict:
-                characters_dict[character] += 1
-            else:
-                characters_dict[character] = 1
+            if character.isalpha():
+                character = character.lower()
+                if character in characters_dict:
+                    characters_dict[character] += 1
+                else:
+                    characters_dict[character] = 1
     return characters_dict
